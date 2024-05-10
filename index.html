@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,230 @@
 </head>
 <body>
 
-  
-  
+  <header class="sidebar" data-sidebar>
+    <div class="wrapper wrapper-1">
+
+      <a href="./" class="logo">
+        <h1 class="logo-light"><i class="fas fa-pen"></i>eznotes</h1>
+        <h1 class="logo-dark"><i class="fas fa-pen"></i>eznotes</h1>
+      </a>
+
+      <button class="menu-btn icon-btn large" aria-label="Close menu"
+      data-sidebar-toggler>
+
+      <i class="fas fa-close" aria-hidden="true"></i>
+
+      <div class="state-layer"></div>
+
+      </button>
+
+    </div>
+
+    <button class="fab" aria-label="New note" data-note-create-btn>
+
+      <i class="fas fa-plus" aria-hidden="true"></i>
+      <span class="text text-label-large">New note</span>
+
+      <div class="state-layer"></div>
+
+    </button>
+
+    <div class="wrapper wrapper-2">
+
+      <h2 class="text-title-small">NOTEBOOKS</h2>
+
+      <button class="icon-btn small" data-tooltip="Create new notebook"
+      aria-label="Create new notebook">
+
+        <i class="fas fa-plus" aria-hidden="true"></i>
+
+        <div class="state-layer"></div>
+      </button>
+
+    </div>
+
+    <nav class="nav custom-scrollbar" data-sidebar-list>
+
+      <div class="nav-item active">
+
+        <span class="text text-label-large" data-notebook-field>My Notebook</span>
+
+        <button class="icon-btn small" aria-label="Edit notebook" data-tooltip="Edit notebook" data-edit-btn>
+
+          <i class="fas fa-pen" aria-hidden="true"></i>
+
+          <div class="state-layer"></div>
+
+        </button>
+
+        <button class="icon-btn small" aria-label="Delete notebook" data-tooltip="Delete notebook" data-delete-btn>
+
+          <i class="fas fa-trash" aria-hidden="true"></i>
+
+          <div class="state-layer"></div>
+
+        </button>
+
+        <div class="state-layer"></div>
+
+      </div>
+
+      
+    </nav>
+    
+    <div class="cp-info">
+
+      <span class="text-label-large">© Copyright 2024
+        <strong>siamso</strong>
+      </span>
+
+    </div>
+
+  </header>
+
+  <div class="overlay" data-sidebar-overlay data-sidebar-toggler></div>
+
+  <main class="main">
+
+    <div class="header">
+
+      <div class="wrapper">
+
+        <p class="title text-title-large" data-greeting>Good Morning</p>
+
+        <span class="text text-body-medium" data-current-date>May 10, 2024</span>
+
+      </div>
+
+      <button class="theme-btn icon-btn large" aria-label="Toggle theme"
+      data-tooltip="Toggle theme" data-theme-btn>
+
+        <i class="fas fa-moon dark-icon" aria-hidden="true"></i>
+        <i class="fas fa-sun light-icon" aria-hidden="true"></i>
+
+        <div class="state-layer"></div>
+
+      </button>
+
+      <button class="menu-btn icon-btn large" aria-label="Open menu" data-sidebar-toggler>
+
+        <i class="fas fa-bars"></i>
+
+        <div class="state-layer"></div>
+
+      </button>
+
+    </div>
+
+    <h2 class="title text-title-medium" data-note-panel-title>My Notebook</h2>
+
+
+    <!-- 
+      --Note List
+     -->
+
+     <div class="note-list" data-note-panel>
+
+      <!-- <div class="card">
+        <h3 class="card-title text-title-medium">Note title</h3>
+
+        <p class="card-text text-body-large">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, corporis molestias! Impedit sit et nihil? Eos cupiditate veniam eum eius neque modi nesciunt ad, quos possimus, qui vitae itaque mollitia. Non facilis ipsa voluptate nam dolorem. Quaerat sunt asperiores amet ipsum, dolorem minima, facilis pariatur odit inventore, perspiciatis itaque dolore!</p>
+
+        <div class="wrapper">
+          <span class="card-time text-label-large">20 min ago</span>
+
+          <button class="icon-btn large" aria-label="Delete note"
+          data-tooltip="Delete note">
+
+            <i class="fas fa-trash" aria-label="true"></i>
+
+            <div class="state-layer"></div>
+          </button>
+        </div>
+
+        <div class="state-layer"></div>
+
+      </div> -->
+
+     </div>
+
+    <!--
+      --FAB for mobile screen
+      -->
+
+    <button class="fab" aria-label="New note" data-note-create-btn>
+
+      <i class="fas fa-plus" aria-hidden="true"></i>
+
+      <div class="state-layer"></div>
+
+    </button>
+
+    <!-- <div class="modal">
+
+      <button class="icon-btn large" aria-label="Close modal">
+
+        <i class="fas fa-close" aria-hidden="true"></i>
+
+        <div class="state-layer"></div>
+
+      </button>
+
+      <input type="text" placeholder="Untitled" value="Untitled" class="modal-title text-title-medium"
+      data-note-field>
+
+      <textarea placeholder="Take a note..." class="modal-text text-body-large custom-scrollbar" data-note-field>Take a note...</textarea>
+
+      <div class="modal-footer">
+        <span class="time text-label-large">20 min ago</span>
+
+        <button class="btn text" data-submit-btn>
+
+          <span class="text-label-large">Save</span>
+
+          <div class="state-layer"></div>
+        </button>
+      </div>
+    </div> -->
+
+    <!-- <div class="overlay modal-overlay" data-modal-overlay></div>
+
+    <div class="modal">
+
+      <h3 class="modal-title text-title-medium">
+        Are you sure you want to delete <strong>"Note title"</strong>
+      </h3>
+
+      <div class="modal-footer">
+
+        <button class="btn text">
+
+          <span class="text-label-large">Cancel</span>
+
+          <div class="state-layer"></div>
+        </button>
+
+        <button class="btn fill">
+
+          <span class="text-label-large">Delete</span>
+
+          <div class="state-layer"></div>
+        </button>
+
+      </div>
+    </div> -->
+
+    <!-- tooltip -->
+    <!-- <span class="tooltip text-body-snall">Tooltip text</span> -->
+    
+    <!-- <div class="empty-notes">
+
+      <i class="fa-regular fa-note-sticky"></i>
+
+      <div class="text-headline-small">No notes</div>
+    </div> -->
+
+  </main>
+
 </body>
 </html>
