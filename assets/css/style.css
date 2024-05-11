@@ -695,6 +695,12 @@ Components
   margin-block-end: var(--spacing-3);
 }
 
+.logo:has(.logo-light, .logo-dark){
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+} 
+
 [data-theme='dark'] .logo-light,
 .logo-dark { display: none; }
 
