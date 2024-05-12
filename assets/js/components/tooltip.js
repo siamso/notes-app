@@ -1,10 +1,10 @@
 'use strict';
 
-const toolTipEL = document.querySelectorAll('[data-tooltip]');
+
 
 // tooltip adjustment-------------------------------
 
-toolTipEL.forEach(element => {
+export const Tooltip = function (element) {
 
   const toolTip = document.createElement('span');
   toolTip.classList.add('tooltip', 'text-body-small');
@@ -26,4 +26,4 @@ toolTipEL.forEach(element => {
 
   element.addEventListener('mouseleave', toolTip.remove.bind(toolTip));
 
-});
+};

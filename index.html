@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- theme js -->
-  <script src="./assets/js/theme.js"></script>
+  <script src="./assets/js/components/theme.js"></script>
 
   <!-- custom css link -->
   <link rel="stylesheet" href="./assets/css/style.css">
@@ -60,7 +60,7 @@
       <h2 class="text-title-small">NOTEBOOKS</h2>
 
       <button class="icon-btn small" data-tooltip="Create new notebook"
-      aria-label="Create new notebook">
+      aria-label="Create new notebook" data-add-notebook>
 
         <i class="fas fa-plus" aria-hidden="true"></i>
 
@@ -71,7 +71,7 @@
 
     <nav class="nav custom-scrollbar" data-sidebar-list>
 
-      <div class="nav-item active">
+      <!-- <div class="nav-item active">
 
         <span class="text text-label-large" data-notebook-field>My Notebook</span>
 
@@ -93,7 +93,7 @@
 
         <div class="state-layer"></div>
 
-      </div>
+      </div> -->
 
       
     </nav>
@@ -142,7 +142,7 @@
 
     </div>
 
-    <h2 class="title text-title-medium" data-note-panel-title>My Notebook</h2>
+    <h2 class="title text-title-medium" data-note-panel-title></h2>
 
 
     <!-- 
@@ -250,7 +250,6 @@
   </main>
   
   <script type="module" src="./assets/js/app.js"></script>
-  <script src="./assets/js/tooltip.js"></script>
   
 </body>
 </html>
