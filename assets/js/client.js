@@ -1,8 +1,9 @@
 'Use strict';
 
 // import module
-import { navitem } from "./navitem.js";
+import { navitem } from "./components/navitem.js";
 import { activeNoteBook } from "./utility.js";
+import { Card } from "./components/card.js";
 
 const sidebarList = document.querySelector('[data-sidebar-list]');
 const notePanelTitle = document.querySelector('[data-note-panel-title]');
@@ -68,5 +69,19 @@ export const client = {
       deletedNotebook.remove()
     }
 
+  },
+
+  note: {
+    /**
+     * Creates a new note card in the UI based on provided note data.
+     * 
+     * @param {Object} noteData - Data representing the new note.
+     */
+    create(noteData) {
+
+      //Append card in notePanel
+      const card = Card(noteData);
+      notePanel.appendChild(card);
+    }
   }
 }

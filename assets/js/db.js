@@ -70,6 +70,32 @@ export const db = {
 
       writeDB();
       return notebookData;
+    },
+
+    /**
+     * Adds a new note to a specified notebook in database.
+     * 
+     * @function
+     * @param {string} notebookId - The ID of the notebook to add the note to.
+     * @param {Object} object - The note object to add.
+     * @returns {Object} The newly created note object.
+     */
+    note(notebookId, object) {
+      readDB();
+
+      const notebook = findNotebook(notekeeperDB, notebookId);
+
+      const noteData = {
+        id: generateID(),
+        notebookId,
+        ...object,
+        postedOn: new Date().getTime()
+      }
+
+      notebook.notes.unshift(noteData);
+      writeDB();
+
+      return noteData;
     }
   },
 

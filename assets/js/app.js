@@ -8,6 +8,7 @@ import { db } from "./db.js";
 import { client } from "./client.js";
 import { activeNoteBook,
          makeElemEditable} from "./utility.js";
+import { NoteModal } from "./components/modal.js";
 
 // sidebar toggler------------------------------------
 
@@ -93,5 +94,33 @@ const renderExistedNotebook = function () {
 }
 renderExistedNotebook()
 
+/**
+ * Create new note
+ * 
+ * Attaches event listeners to a collection of DOM elements representing "Create Note"
+ * buttons.
+ * 
+ * When a button is clicked, it opens a modal for creating a new note and handles the
+ * submission of the new note to the database and client.
+ * 
+ */
+
+const /** { Array<HTMLElement> } */ noteCreateBtns = document.querySelectorAll('[data-note-create-btn]');
+
+noteCreateBtns.forEach(element => {
+  element.addEventListener('click', function () {
+    const /** {Object} */ modal = NoteModal();
+    modal.open();
+
+    //Handle the submissions of the new note to database and client
+    modal.onSubmit(noteObj => {
+      const activeNotebookId = document.querySelector('[data-notebook].active').dataset.notebook;
+
+      const noteData = db.post.note(activeNotebookId, noteObj);
+      client.note.create(noteData);
+      modal.close();
+    })
+  });
+});
 
 
