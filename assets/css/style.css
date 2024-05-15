@@ -650,7 +650,7 @@ Components
 
 @keyframes fade {
   0% { opacity: 0; }
-  100% { opacity: 1; }
+  100% { opacity: 1; } 
 }
 
 /* ----------------- */
@@ -789,6 +789,7 @@ Components
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   align-content: flex-start;
+  flex-grow: 1;
   align-items: stretch;
   gap: var(--spacing-2);
 }

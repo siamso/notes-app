@@ -90,9 +90,7 @@ addNoteBtnEl.addEventListener('click', showNoteBookField);
 const renderExistedNotebook = function () {
   const /*{Array}*/ notebookList = db.get.notebook();
   client.notebook.read(notebookList);
-  
-}
-renderExistedNotebook()
+}(); /** IIFE (immediately invoked functions expressions) */
 
 /**
  * Create new note
@@ -123,4 +121,19 @@ noteCreateBtns.forEach(element => {
   });
 });
 
+
+/**
+ * Renders existing notes in the active notebook.Retrieves note data from the database based on the active notebook's ID and uses the client to display the notes.
+ */
+
+const renderExistedNote = function () {
+  const activeNoteBookId = document.querySelector('[data-notebook].active')?.dataset.notebook;
+
+  if (activeNoteBookId) {
+    const /** {Array<Object>} */ noteList = db.get.note(activeNoteBookId);
+
+    // Display existing note
+    client.note.read(noteList);
+  }
+}();
 

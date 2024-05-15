@@ -4,7 +4,8 @@
 
 //made generatedId from date.js file....
 import { generateID, findNotebook,
-         findNotebookIndex } from "./utility.js";  
+         findNotebookIndex, findNote,
+         findNoteIndex } from "./utility.js";  
 
 //DB (database) Object
 
@@ -104,6 +105,20 @@ export const db = {
       readDB()
 
       return notekeeperDB.notebooks;
+    },
+
+    /**
+     * Retrieves all note within a specified notebook.
+     * 
+     * @function
+     * @param {string} notebookId - The ID of the notebook to retrieve notes from.
+     * @returns {Array<Object>} An array of note objects
+     */
+    note(notebookId) {
+      readDB();
+
+      const notebook = findNotebook(notekeeperDB, notebookId);
+      return notebook.notes;
     }
   },
 
@@ -117,6 +132,24 @@ export const db = {
       writeDB();
 
       return notebook;
+    },
+    /**
+     * Updates the content of a note in the database.
+     * 
+     * @function
+     * @param {string} noteId - The ID of the note to update.
+     * @param {Object} object - The updated data for the note.
+     * @returns {Object} The updated note Object
+     */
+    note(noteId, object) {
+      readDB();
+
+      const oldNote = findNote(notekeeperDB, noteId);
+      const newNote = Object.assign(oldNote, object);
+
+      writeDB();
+      
+      return newNote;      
     }
   },
 
@@ -135,6 +168,27 @@ export const db = {
       notekeeperDB.notebooks.splice(notebookIndex, 1);
 
       writeDB();
+    },
+
+    /**
+     * Deletes a note from a specified notebook in the database.
+     * 
+     * @function
+     * @param {string} notebookId - The ID of the notebook containing the note to delete. 
+     * @param {string} noteId - The ID of the note to delete.
+     * @returns {Array<Object>} An array of remaining notes in the notebook 
+     */
+    note(notebookId, noteId) {
+      readDB();
+
+      const notebook = findNotebook(notekeeperDB, notebookId);
+      const noteIndex = findNoteIndex(notebook, noteId);
+
+      notebook.notes.splice(noteIndex, 1);
+
+      writeDB();
+
+      return notebook.notes;
     }
   }
 };

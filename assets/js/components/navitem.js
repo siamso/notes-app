@@ -42,6 +42,9 @@ export const navitem = function (id, name) {
   navItem.addEventListener('click', function () {
     notePanelTitle.textContent = name;
     activeNoteBook.call(this);
+
+    const noteList = db.get.note(this.dataset.notebook);
+    client.note.read(noteList);
   });
 
   /*
