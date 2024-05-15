@@ -137,7 +137,7 @@ export const client = {
      * @param {Object} noteData - New data for the note. 
      */
     update(noteId, noteData) {
-      const oldCard = document.querySelector(`[data-note=${noteId}]`);
+      const oldCard = document.querySelector(`[data-note="${noteId}"]`);
       const newCard = Card(noteData);
       notePanel.replaceChild(newCard, oldCard);
     },
