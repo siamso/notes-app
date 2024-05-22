@@ -6,6 +6,6 @@ Toggle theme,
 Tooltip,
 Confirmation Modal and so on
 
-It stores data on the local storage of your browser so that you can retrieve your data 
+It stores data on the local storage of your browser so that you can retrieve your data even
 after quitting your browser.
 
